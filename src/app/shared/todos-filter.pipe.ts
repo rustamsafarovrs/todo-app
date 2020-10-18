@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Todo} from './ todos.service';
+import {Todo} from './todos.service';
 
 @Pipe({name: 'todosFilter'})
 export class TodosFilterPipe implements PipeTransform {

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Todo, TodosService} from '../shared/ todos.service';
+import {Todo, TodosService} from '../shared/todos.service';
 
 @Component({
   selector: 'app-todo-form',
