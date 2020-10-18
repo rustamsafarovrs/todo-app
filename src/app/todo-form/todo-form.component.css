@@ -28,6 +28,6 @@ div button {
   cursor: pointer;
 }
 
-div button:hover  {
+div button:hover {
   background: #d2d2d2;
 }

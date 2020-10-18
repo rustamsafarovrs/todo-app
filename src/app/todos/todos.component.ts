@@ -19,8 +19,8 @@ export class TodosComponent implements OnInit {
     this.todosService.fetchTodos()
       .pipe(delay(500))
       .subscribe(() => {
-      this.loading = false;
-    });
+        this.loading = false;
+      });
   }
 
   onChange(id: number) {
