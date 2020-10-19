@@ -1,20 +1,26 @@
-<div class="container" *ngIf="!loading">
-  <h1 class="title">{{appTitle}}  </h1>
+<div *ngIf="!showConnectionError; else NoInternetConnection">
+  <div class="container" *ngIf="!loading">
+    <h1 class="title">{{appTitle}}  </h1>
 
-  <app-todos></app-todos>
+    <app-todos></app-todos>
 
-  <app-todo-form></app-todo-form>
+    <app-todo-form></app-todo-form>
 
-  <button (click)="toggle()">Toggle PopOver</button>
-  <div [@popOverState]="stateName">
-    <p>Hello! I'm a helpful message.</p>
+    <button (click)="toggle()">Toggle PopOver</button>
+    <div [@popOverState]="stateName">
+      <p>Hello! I'm a helpful message.</p>
+    </div>
+    <div class="show-entries-root">
+      <select [(ngModel)]="showEntries" (change)="fetchTodos()">
+        <option *ngFor="let item of entries"> {{item}}</option>
+      </select>
+      <img class="loading-svg-small" *ngIf="loadingSmall" src="assets/img/loading.svg" alt="loading...">
+    </div>
   </div>
 
-  <select [(ngModel)]="showEntries" (change)="fetchTodos()">
-    <option *ngFor="let item of entries"> {{item}}</option>
-  </select>
+  <div *ngIf="loading" class="loading_root">
+    <img class="loading-svg" src="assets/img/loading.svg" alt="loading...">
+  </div>
 </div>
 
-<div *ngIf="loading" class="loading_root">
-  <img class="loading-svg" src="assets/img/loading.svg" alt="loading...">
-</div>
+<ng-template #NoInternetConnection><h2 style="text-align: center"> No internet connection</h2></ng-template>

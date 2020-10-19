@@ -26,6 +26,18 @@
 }
 
 .loading-svg {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
+}
+
+.loading-svg-small {
+  width: 25px;
+  height: 25px;
+}
+
+.show-entries-root {
+  display: flex;
+  vertical-align: center;
+  align-content: center;
+  line-height: 1.8;
 }

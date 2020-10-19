@@ -27,6 +27,8 @@ export class AppComponent implements OnInit {
 
   show = false;
   loading = true;
+  loadingSmall = true;
+  showConnectionError = false;
 
   showEntries = 3;
 
@@ -36,7 +38,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!isNaN(Number(localStorage.getItem('showEntries')))) {
+    if (Number.isInteger(localStorage.getItem('showEntries'))) {
       this.showEntries = Number(localStorage.getItem('showEntries'));
     } else {
       this.showEntries = 3;
@@ -46,12 +48,17 @@ export class AppComponent implements OnInit {
 
 
   fetchTodos() {
+    this.loadingSmall = true;
     localStorage.setItem('showEntries', String(this.showEntries));
     this.todosService.fetchTodos(this.showEntries)
       .pipe(delay(1000))
-      .subscribe(() => {
-        this.loading = false;
-      });
+      .subscribe(data => {
+          this.loading = false;
+          this.loadingSmall = false;
+        },
+        error => {
+          this.showConnectionError = true;
+        });
   }
 
   get stateName() {
