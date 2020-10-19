@@ -7,7 +7,8 @@ import {TodosService} from './shared/todos.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css',
-    'shared/css/button.css'],
+    'shared/css/button.css',
+    'shared/css/core.css'],
   animations: [
     trigger('popOverState', [
       state('show', style({
@@ -16,8 +17,8 @@ import {TodosService} from './shared/todos.service';
       state('hide', style({
         opacity: 0,
       })),
-      transition('show => hide', animate('600ms ease-out')),
-      transition('hide => show', animate('1000ms ease-in'))
+      transition('show => hide', animate('300ms ease-out')),
+      transition('hide => show', animate('800ms ease-in'))
     ])
   ]
 })
@@ -27,11 +28,26 @@ export class AppComponent implements OnInit {
   show = false;
   loading = true;
 
+  showEntries = 3;
+
+  entries = [3, 5, 10, 20];
+
   constructor(private todosService: TodosService) {
   }
 
   ngOnInit(): void {
-    this.todosService.fetchTodos()
+    if (!isNaN(Number(localStorage.getItem('showEntries')))) {
+      this.showEntries = Number(localStorage.getItem('showEntries'));
+    } else {
+      this.showEntries = 3;
+    }
+    this.fetchTodos();
+  }
+
+
+  fetchTodos() {
+    localStorage.setItem('showEntries', String(this.showEntries));
+    this.todosService.fetchTodos(this.showEntries)
       .pipe(delay(1000))
       .subscribe(() => {
         this.loading = false;

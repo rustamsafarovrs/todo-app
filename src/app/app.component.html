@@ -9,6 +9,10 @@
   <div [@popOverState]="stateName">
     <p>Hello! I'm a helpful message.</p>
   </div>
+
+  <select [(ngModel)]="showEntries" (change)="fetchTodos()">
+    <option *ngFor="let item of entries"> {{item}}</option>
+  </select>
 </div>
 
 <div *ngIf="loading" class="loading_root">
