@@ -1,7 +1,16 @@
-<div class="container">
-  <h1>{{appTitle}}  </h1>
+<div class="container" *ngIf="!loading">
+  <h1 class="title">{{appTitle}}  </h1>
 
   <app-todos></app-todos>
 
   <app-todo-form></app-todo-form>
+
+  <button (click)="toggle()">Toggle PopOver</button>
+  <div [@popOverState]="stateName">
+    <p>Hello! I'm a helpful message.</p>
+  </div>
+</div>
+
+<div *ngIf="loading" class="loading_root">
+  <img class="loading-svg" src="assets/img/loading.svg" alt="loading...">
 </div>

@@ -1,9 +1,31 @@
 .container {
-  padding-top: 3rem;
+  padding: 3rem 4rem 1rem 4rem;
   width: 600px;
-  margin: 0 auto;
+  margin: 100px auto 0 auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 6px 0px rgba(74, 74, 74, 0.47);
+
 }
 
 .container h1 {
   margin-bottom: 1rem;
+}
+
+.title {
+  text-align: center;
+
+}
+
+.loading_root {
+  display: flex;
+  justify-content: center;
+  height: 95vh;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.loading-svg {
+  width: 40px;
+  height: 40px;
 }

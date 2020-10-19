@@ -1,0 +1,14 @@
+button {
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background: #eee;
+  transition: .3s all;
+  cursor: pointer;
+  min-height: 32px;
+}
+
+div button:hover {
+  background: #d2d2d2;
+}

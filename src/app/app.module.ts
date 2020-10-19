@@ -8,6 +8,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {TodoFormComponent} from './todo-form/todo-form.component';
 import {FormsModule} from '@angular/forms';
 import {TodosFilterPipe} from './shared/todos-filter.pipe';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {TodosFilterPipe} from './shared/todos-filter.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,8 @@ import {Todo, TodosService} from '../shared/todos.service';
 @Component({
   selector: 'app-todo-form',
   templateUrl: './todo-form.component.html',
-  styleUrls: ['./todo-form.component.css']
+  styleUrls: ['./todo-form.component.css',
+  '../shared/css/button.css']
 })
 export class TodoFormComponent implements OnInit {
 

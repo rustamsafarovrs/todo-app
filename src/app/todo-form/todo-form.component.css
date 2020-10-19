@@ -11,23 +11,13 @@ div {
 div input {
   flex-basis: 80%;
   height: 100%;
+  margin-right: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
   padding: 0 .5rem;
 }
 
-div button {
+button {
   flex-basis: 20%;
-  height: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  background: #eee;
-  transition: .3s all;
-  cursor: pointer;
-}
-
-div button:hover {
-  background: #d2d2d2;
 }

@@ -32,7 +32,7 @@ ul li small {
   text-decoration: line-through;
 }
 
-.rm {
+.rm, button {
   border-radius: 50%;
   background-color: red;
   color: #fff;
